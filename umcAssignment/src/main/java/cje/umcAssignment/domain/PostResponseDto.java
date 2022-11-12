@@ -1,6 +1,7 @@
 package cje.umcAssignment.domain;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,4 +14,12 @@ public class PostResponseDto {
     private String content;
 
     private String category;
+
+    @Builder
+    public PostResponseDto(String title, String writer, String content, String category) {
+        this.title = title;
+        this.writer = writer;
+        this.content = content;
+        this.category = category;
+    }
 }

@@ -1,6 +1,7 @@
 package cje.umcAssignment.domain;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,4 +21,21 @@ public class Post {
     private String content;
 
     private String category;
+
+    @Builder
+    public Post(String title, String writer, String content, String category) {
+        this.title = title;
+        this.writer = writer;
+        this.content = content;
+        this.category = category;
+    }
+
+    // Post -> responseDto
+    public PostResponseDto toPostResponseDto(Post post){
+        return PostResponseDto.builder()
+                .title(post.getTitle())
+                .content(post.getContent())
+                .writer(post.getWriter())
+                .category(post.getCategory()).build();
+    }
 }

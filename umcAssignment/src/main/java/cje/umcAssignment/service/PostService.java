@@ -15,7 +15,7 @@ public interface PostService {
     /*
      * id로 Post 보기
      * */
-    public Optional<PostResponseDto> findById(Long id);
+    public PostResponseDto findById(Long id);
 
     /*
      * 모든 Post 보기
