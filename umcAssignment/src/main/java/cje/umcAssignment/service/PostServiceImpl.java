@@ -23,7 +23,7 @@ public class PostServiceImpl implements PostService{
         this.postRepository = postRepository;
     }
 
-    @Override
+    @Override @Transactional
     public PostResponseDto save(PostRequestDto postRequestDto) {
         // requestDto -> entity
         Post post = postRequestDto.toEntity();
@@ -35,7 +35,7 @@ public class PostServiceImpl implements PostService{
         return postResponseDto;
     }
 
-    @Override
+    @Override @Transactional
     public PostResponseDto findById(Long id) {
         // id로 Post 찾기
         Post post = postRepository.findById(id)
@@ -46,7 +46,7 @@ public class PostServiceImpl implements PostService{
         return postResponseDto;
     }
 
-    @Override
+    @Override @Transactional
     public List<PostResponseDto> findAll() {
         // 모든 Post 찾기
         List<Post> posts = postRepository.findAll();
@@ -60,7 +60,7 @@ public class PostServiceImpl implements PostService{
         return postResponseDtos;
     }
 
-    @Override
+    @Override @Transactional
     public List<PostResponseDto> findByWriter(String writer) {
         // writer로 Post 찾기
         List<Post> posts = postRepository.findByWriter(writer);
@@ -74,7 +74,7 @@ public class PostServiceImpl implements PostService{
         return postResponseDtos;
     }
 
-    @Override
+    @Override @Transactional
     public List<PostResponseDto> findByCategory(String category) {
         // category로 Post 찾기
         List<Post> posts = postRepository.findByCategory(category);
@@ -88,12 +88,12 @@ public class PostServiceImpl implements PostService{
         return postResponseDtos;
     }
 
-    @Override
+    @Override @Transactional
     public void deleteById(Long id) {
         postRepository.deleteById(id);
     }
 
-    @Override
+    @Override @Transactional
     public PostResponseDto updatePost(Long id, PostRequestDto postRequestDto) {
         // id로 post 찾기
         Post post = postRepository.findById(id)
