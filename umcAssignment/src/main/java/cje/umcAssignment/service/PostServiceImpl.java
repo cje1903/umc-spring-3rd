@@ -1,8 +1,8 @@
 package cje.umcAssignment.service;
 
-import cje.umcAssignment.domain.Post;
-import cje.umcAssignment.domain.PostRequestDto;
-import cje.umcAssignment.domain.PostResponseDto;
+import cje.umcAssignment.model.Post;
+import cje.umcAssignment.model.PostRequestDto;
+import cje.umcAssignment.model.PostResponseDto;
 import cje.umcAssignment.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional
